@@ -8,3 +8,26 @@ mandatory_include:
 bootstrap_include:
     com.canonical.certification::executable
     com.canonical.certification::snap
+
+id: kivu-os-full
+unit: test plan
+_name: Kivu (Full OS Tests)
+include:
+    kivu-os/.*
+nested_part:
+    graphics-integrated-gpu-cert-automated
+    cpu-cert-automated
+    audio-cert-automated
+    bluetooth-cert-automated
+    camera-cert-automated
+    input-cert-automated
+    keys-cert-automated
+    networking-cert-automated
+    usb-cert-automated
+    usb3-cert-automated
+    wireless-cert-automated
+mandatory_include:
+    com.canonical.certification::miscellanea/submission-resources
+bootstrap_include:
+    com.canonical.certification::executable
+    com.canonical.certification::snap

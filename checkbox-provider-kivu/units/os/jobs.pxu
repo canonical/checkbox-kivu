@@ -1,0 +1,8 @@
+plugin: shell
+category_id: kivu-os
+id: kivu-os/check-libva
+_summary: Check libva installation
+requires:
+  package.name == 'libva'
+flags: simple fail-on-resource
+command: echo "libva installed"
