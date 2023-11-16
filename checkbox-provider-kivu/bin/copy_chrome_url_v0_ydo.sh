@@ -22,8 +22,8 @@ sudo -H -u "${NORMAL_USER}"  DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/
      gsettings set org.gnome.desktop.input-sources sources "[('xkb','us')]"
 
 # Specify where daemon and client binaries have been installed.
-DAE=/usr/bin/ydotoold
-YDO=/usr/bin/ydotool
+DAE=ydotoold
+YDO=ydotool
 
 # Launch the daemon and give it 2 seconds to get ready.
 $DAE &
