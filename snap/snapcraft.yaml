@@ -19,19 +19,17 @@ base: core22
 #     use configure -l to get the list of the current variables
 #     For example, a useful use case is to inject environment variable
 #     to enable debugging output (LIBVA_MESSAGING_LEVEL)
-# remote-slave:
-#   - checkbox slave daemon that will the responsible for running the test sesssion
+# run-agent:
+#   - checkbox agent daemon that will the responsible for running the test sesssion
 #     in the remote fashion (through checkbox-cli)
 # test-runner / test-runner-automated:
 #   - execute all provider tests inside the snap environment
-#     the test execution is standalone and does not depend on the remote-slave daemon
+#     the test execution is standalone and does not depend on the run-agent daemon
 # shell:
 #   - give shell access to the provider snap
 # test-runner-automated-hwdec:
 #   - execute hardware decoding tests
-#     the test execution is standalone and does not depend on the remote-slave daemon
-# install-full-deps:
-#   - install all depedencies needed for provider jobs
+#     the test execution is standalone and does not depend on the run-agent daemon
 # media-stress-test
 #   - execute hardware decoding tests which max out the video engines
 apps:
@@ -44,9 +42,9 @@ apps:
   media-stress-test:
     command-chain: [bin/wrapper_local]
     command: bin/media-stress-test
-  remote-slave:
+  run-agent:
     command-chain: [bin/wrapper_local]
-    command: bin/checkbox-cli-wrapper slave
+    command: bin/checkbox-cli-wrapper run-agent
     daemon: simple
     restart-condition: always
   shell:
