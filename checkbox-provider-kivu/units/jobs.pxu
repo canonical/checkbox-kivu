@@ -20,7 +20,6 @@ requires:
 environ: GST_PLUGIN
 command:
   tdb.py reset
-  source export_va_path.sh
   GPU_LOAD_CMD=$(which gpu-load.py)
   # NB : preserve PATH of user for the sudo (if not, intel_gpu_top will not be found)
   # --preserve-env can be used but it will not work because of the secure_path option 
@@ -61,7 +60,6 @@ requires:
 environ: GST_PLUGIN
 command:
   tdb.py reset
-  source export_va_path.sh
   GPU_LOAD_CMD=$(which gpu-load.py)
   # NB : preserve PATH of user for the sudo (if not, intel_gpu_top will not be found)
   # --preserve-env can be used but it will not work because of the secure_path option 

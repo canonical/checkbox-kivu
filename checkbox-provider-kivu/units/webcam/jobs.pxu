@@ -10,7 +10,6 @@ requires:
   package.name == "gstreamer1.0-vaapi"
 environ: GST_PLUGIN
 command:
-  source export_va_path.sh
   timeout 10 intel_gpu_top -J > "${PLAINBOX_SESSION_SHARE}"/gstreamer_raw_webcam_encoding_intel_gpu_top.json &
   gpu_top_pid=$!
   timeout 10 gst-launch-1.0 -v --gst-plugin-path="${GST_PLUGIN}" v4l2src ! videoconvert ! video/x-raw ! fakesink
