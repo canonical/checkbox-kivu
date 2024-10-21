@@ -69,7 +69,7 @@ command:
   /usr/bin/gsettings set org.gnome.desktop.screensaver lock-enabled false
   /usr/bin/gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
   # Disable screen-saver if it is currently enabled
-  # use system dbus-send with absolute path because /snap/checkbox22/current/usr/bin/dbus-send does not work
+  # use system dbus-send with absolute path because /snap/checkbox24/current/usr/bin/dbus-send does not work
   screen_saver_status=`/usr/bin/dbus-send --session --print-reply=literal --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.GetActive`
   if [[ $? -ne 0 ]]; then
     echo "The dbus-send command failed."

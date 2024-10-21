@@ -1,4 +1,4 @@
-name: checkbox-kivu-classic
+name: checkbox-kivu-classic24
 summary: Checkbox tests for the kivu classic project
 description: |
   Collection of tests to be run on devices that are part of the kivu project
@@ -6,7 +6,7 @@ version: '2.1.1'
 confinement: classic
 grade: stable
 
-base: core22
+base: core24
 
 # Here are the available applications of the kivu checkbox provider snap
 # To run : snap run checkbox-kivu-classic.<app>
@@ -78,15 +78,15 @@ parts:
     source-type: local
     build-snaps:
       - checkbox-provider-tools
-      - checkbox22
+      - checkbox24
     stage-packages:
       - python3-tinydb
       - python3-filelock
       - intel-gpu-tools
       - vainfo
     override-build: |
-      export PYTHONPATH=$SNAPCRAFT_STAGE/lib/python3.10/site-packages:$SNAPCRAFT_STAGE/usr/lib/python3/dist-packages
-      for path in $(find "/snap/checkbox22/current/providers/" -mindepth 1 -maxdepth 1 -type d); do export PROVIDERPATH=$path${PROVIDERPATH:+:$PROVIDERPATH}; done
+      export PYTHONPATH=$SNAPCRAFT_STAGE/lib/python3.12/site-packages:$SNAPCRAFT_STAGE/usr/lib/python3/dist-packages
+      for path in $(find "/snap/checkbox24/current/providers/" -mindepth 1 -maxdepth 1 -type d); do export PROVIDERPATH=$path${PROVIDERPATH:+:$PROVIDERPATH}; done
       checkbox-provider-tools validate
       checkbox-provider-tools build
       checkbox-provider-tools install --layout=relocatable --prefix=/providers/checkbox-provider-kivu --root="$SNAPCRAFT_PART_INSTALL"

@@ -25,7 +25,7 @@ Located in the `checkbox-provider-kivu` directory, it contains:
 Install the Checkbox runtime and the Kivu provider snaps:
 
 ```shell
-sudo snap install checkbox22
+sudo snap install checkbox24
 sudo snap install checkbox-kivu-classic --classic
 ```
 
