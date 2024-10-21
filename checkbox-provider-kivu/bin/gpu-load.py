@@ -20,7 +20,8 @@ import re
 import time
 from gpu_utils import compute_avg_intel
 
-
+# NB: this script should only print in stdout the GPU load
+#     and critical errors
 
 def load_intel(fname : str, timeout : int) -> float:
     try:
@@ -63,7 +64,6 @@ def get_amd_vcn():
             else:
                 load = -1
     except OSError:
-        print('Error reading /sys/kernel/debug/dri/0/amdgpu_pm_info')
         pass
     return load
 
