@@ -13,12 +13,6 @@ base: core24
 #
 # checkbox-cli:
 #   - checkbox client, can be used to talk to the checkbox daemon
-# configure:
-#   - inject environment variable into checkbox snap environnement
-#     the variable initial list can be found in config/config_vars
-#     use configure -l to get the list of the current variables
-#     For example, a useful use case is to inject environment variable
-#     to enable debugging output (LIBVA_MESSAGING_LEVEL)
 # remote-slave:
 #   - checkbox slave daemon that will the responsible for running the test sesssion
 #     in the remote fashion (through checkbox-cli)
@@ -38,9 +32,6 @@ apps:
   checkbox-cli:
     command-chain: [bin/wrapper_local]
     command: bin/checkbox-cli-wrapper
-  configure:
-    command-chain: [bin/wrapper_local]
-    command: bin/configure
   media-stress-test:
     command-chain: [bin/wrapper_local]
     command: bin/media-stress-test
@@ -65,11 +56,6 @@ apps:
     command: bin/run-hwdec-check
   install-full-deps:
     command: bin/install-full-deps
-
-passthrough:
-  hooks:
-    configure:
-      command-chain: [bin/wrapper_local]
 
 parts:
   checkbox-provider-kivu:
